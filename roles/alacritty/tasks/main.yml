@@ -1,0 +1,7 @@
+---
+- name: Install alacritty
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - alacritty-sixel-git
+  become_user: aur_builder
