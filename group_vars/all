@@ -1,0 +1,12 @@
+user:
+    name: glen
+    uid: 1000
+    group: glen
+    shell: /usr/bin/zsh
+    email:  glen.goodwin1992@gmail.com
+    log:
+        dir: log
+        rotate: 8
+firejail:
+    blacklist:
+        - ~/.keys

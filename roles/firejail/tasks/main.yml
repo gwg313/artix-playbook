@@ -1,0 +1,38 @@
+---
+- name: Install firejail
+  pacman:
+    name: firejail
+    state: present
+
+- name: Install firewarden
+  kewlfft.aur.aur:
+    use: yay
+    name: firewarden
+  become_user: aur_builder
+  tags:
+    - aur
+
+- name: Install firejail profile update script
+  copy:
+    src: profile-activate.sh
+    dest: /usr/local/bin/profile-activate
+    mode: 0755
+
+- name: Create firejail profile directory
+  file:
+    path: /usr/local/etc/firejail
+    state: directory
+
+- name: Verify firejail globals file exists
+  copy:
+    content: ""
+    dest: /etc/firejail/globals.local
+    force: false
+
+- name: Add blacklist to globals
+  lineinfile:
+    dest: /etc/firejail/globals.local
+    state: present
+    line: "blacklist {{ item }}"
+  with_items: "{{ firejail.blacklist }}"
+  become: yes
