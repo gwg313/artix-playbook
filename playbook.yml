@@ -4,6 +4,7 @@
   roles:
     - { role: aur_builder, tags: ['aur_builder'] }
     - { role: base, tags: ['base'] }
+    - { role: cron, tags: ['cron'] }
     - { role: aur_builder, tags: ['aur_builder'] }
     - { role: sound, tags: ['sound'] }
     - { role: firejail, tags: ['firejail'] }
