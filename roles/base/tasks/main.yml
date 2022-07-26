@@ -1,0 +1,47 @@
+---
+
+- name: Add Universe to pacman.conf
+  ansible.builtin.blockinfile:
+    path: /etc/pacman.conf
+    block: |
+      [universe]
+      Server = https://universe.artixlinux.org/$arch
+      Server = https://mirror1.artixlinux.org/universe/$arch
+      Server = https://mirror.pascalpuffke.de/artix-universe/$arch
+      Server = https://artixlinux.qontinuum.space/artixlinux/universe/os/$arch
+      Server = https://mirror1.cl.netactuate.com/artix/universe/$arch
+      Server = https://ftp.crifo.org/artix-universe/
+
+- name: Refresh pacman mirrors
+  pacman:
+    update_cache: yes
+
+- name: Install artix-archlinux-support
+  pacman:
+      name: artix-archlinux-support
+      state: present
+
+- name: Copy pacman configuration file
+  copy:
+    src: pacman.conf
+    dest: /etc/pacman.conf
+
+- name: Refresh pacman mirrors
+  pacman:
+    update_cache: yes
+
+- name: Install inetutils for hostname
+  pacman:
+      name: inetutils
+      state: present
+
+- name: Set the hostname
+  ansible.builtin.shell: hostname {{hostname}}
+  when: hostname is defined
+
+- include_tasks: shell.yml
+- include_tasks: user.yml
+- include_tasks: sudo.yml
+- include_tasks: packages.yml
+
+

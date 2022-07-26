@@ -7,6 +7,46 @@ user:
     log:
         dir: log
         rotate: 8
+
+hostname: Romdeau
+
 firejail:
     blacklist:
         - ~/.keys
+base_packages:
+    - base-devel
+    - man-db
+    - man-pages
+    - pacman-contrib
+    - fwupd
+    - dmidecode
+    - tmux
+    - git
+    - rsync
+    - coreutils
+    - moreutils
+    - dateutils
+    - bc
+    - ranger
+    - arch-wiki-lite
+    - arch-wiki-docs
+    - python-keyring
+    - python-secretstorage
+    - tig
+    - ruby
+    - pv
+    - minicom
+    - jq
+    - termdown
+    - fzf
+    - cpulimit
+
+aur:
+    dir: aur
+    packages:
+        - yay
+        - downgrade
+        - zplug
+        - miller
+        - myrepos
+        - ctmg

@@ -3,6 +3,11 @@
   become: yes
   roles:
     - { role: aur_builder, tags: ['aur_builder'] }
+    - { role: base, tags: ['base'] }
+    - { role: aur_builder, tags: ['aur_builder'] }
     - { role: sound, tags: ['sound'] }
     - { role: firejail, tags: ['firejail'] }
     - { role: alacritty, tags: ['alacritty'] }
+  vars_prompt:
+    - name: user_password
+      prompt: "Enter desired user password"

@@ -1,0 +1,16 @@
+---
+- name: Install Bash
+  pacman:
+    name:
+      - bash
+    state: present
+  tags:
+    - shell
+
+- name: Install ZSH
+  pacman:
+    name:
+      - zsh
+    state: present
+  tags:
+    - shell

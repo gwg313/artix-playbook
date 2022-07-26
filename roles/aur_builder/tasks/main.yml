@@ -2,6 +2,7 @@
   become: yes
   ansible.builtin.user:
     name: aur_builder
+    password: "{{ user_password|password_hash('sha512') }}"
     create_home: yes
     group: wheel
 
