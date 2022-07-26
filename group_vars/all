@@ -13,6 +13,11 @@ hostname: Romdeau
 firejail:
     blacklist:
         - ~/.keys
+ssh:
+    port: 22
+    user_key: ~/.ssh/id_ed25519
+    enable_sshd: True
+
 base_packages:
     - base-devel
     - man-db
