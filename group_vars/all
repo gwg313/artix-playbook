@@ -18,6 +18,10 @@ ssh:
     user_key: ~/.ssh/id_ed25519
     enable_sshd: True
 
+gnupg:
+    enable_agent: True
+    emulate_ssh: True
+
 base_packages:
     - base-devel
     - man-db

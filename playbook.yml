@@ -5,6 +5,7 @@
     - { role: aur_builder, tags: ['aur_builder'] }
     - { role: base, tags: ['base'] }
     - { role: cron, tags: ['cron'] }
+    - { role: gnupg, tags: ['gnupg'] }
     - { role: ssh, tags: ['ssh'] }
     - { role: aur_builder, tags: ['aur_builder'] }
     - { role: sound, tags: ['sound'] }
