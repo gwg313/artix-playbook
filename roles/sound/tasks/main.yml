@@ -1,0 +1,36 @@
+---
+- name: Install alsa-utils
+  pacman:
+    name: alsa-utils
+    state: present
+
+- name: Install Pulse Audio
+  pacman:
+    name:
+      - lsp-plugins
+      - pulseaudio
+      - pulseaudio-alsa
+    state: present
+
+- name: Install Pulse Audio - Aur
+  kewlfft.aur.aur:
+    name:
+      - pulseeffects-legacy
+    state: present
+  become_user: aur_builder
+
+- name: Install Pipewire
+  pacman:
+    name:
+      - pavucontrol
+      - pipewire
+      - pipewire-media-session
+      - ponymix
+      - jack2
+    state: present
+
+- name: Install Pavucontrol
+  pacman:
+    name:
+      - pavucontrol
+    state: present
