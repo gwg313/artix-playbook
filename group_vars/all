@@ -10,6 +10,10 @@ user:
 
 hostname: Romdeau
 
+dotfiles:
+    url: git@github.com:losttenko/.dotfiles.git
+    destination: /home/glen/.dotfiles
+
 firejail:
     blacklist:
         - ~/.keys
