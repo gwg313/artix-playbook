@@ -1,0 +1,16 @@
+---
+- name: Push ipv4 firewall config
+  template: src=iptables.rules.j2 dest=/var/lib/iptables/rules-save
+  notify:
+    - restart iptables
+
+- name: Enable and start iptables
+  ansible.builtin.service: name=iptables enabled=yes state=started
+
+- name: Push ipv6 firewall config
+  template: src=ip6tables.rules.j2 dest=/var/lib/ip6tables/rules-save
+  notify:
+    - restart ip6tables
+
+- name: Enable and start ip6tables
+  ansible.builtin.service: name=ip6tables enabled=yes state=started
