@@ -1,0 +1,11 @@
+---
+- name: Install YubiKey Personalization
+  pacman: name=yubikey-personalization state=present
+
+- name: Install smartcard libs/tools
+  pacman:
+    name:
+      - pcsclite
+      - libusb-compat
+      - ccid
+    state: present

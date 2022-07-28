@@ -12,6 +12,7 @@
     - { role: sound, tags: ['sound'] }
     - { role: firejail, tags: ['firejail'] }
     - { role: alacritty, tags: ['alacritty'] }
+    - { role: yubikey, tags: ['yubikey'] }
   vars_prompt:
     - name: user_password
       prompt: "Enter desired user password"
