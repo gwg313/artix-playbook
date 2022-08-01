@@ -10,6 +10,7 @@
     - { role: ssh, tags: ['ssh'] }
     - { role: aur_builder, tags: ['aur_builder'] }
     - { role: sound, tags: ['sound'] }
+    - { role: bluetooth, tags: ['bluetooth'] }
     - { role: firejail, tags: ['firejail'] }
     - { role: alacritty, tags: ['alacritty'] }
     - { role: yubikey, tags: ['yubikey'] }
