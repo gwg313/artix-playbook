@@ -1,0 +1,38 @@
+- name: Install sway
+  pacman:
+    name: 
+      - sway
+      - autocutsel
+      - adobe-source-han-sans-jp-fonts
+      - waybar
+      - wl-clipboard
+      - wofi
+      - fcitx-anthy
+      - fcitx-configtool
+      - grim
+      - light
+      - mako
+      - slurp
+      - xdg-desktop-portal-wlr
+      - noto-fonts-cjk
+      - noto-fonts-emoji
+      - noto-fonts-extra
+      - otf-font-awesome
+      - lxappearance
+    state: present
+
+- name: Install sway aur
+  kewlfft.aur.aur:
+    name: 
+      - azote
+      - bemenu
+      - grimshot
+      - j4-dmenu-desktop
+      - swaylock-effects
+      - wlrobs
+      - wpgtk
+    use: yay
+    state: present
+  become: yes
+  become_user: aur_builder
+
