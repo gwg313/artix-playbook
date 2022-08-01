@@ -17,6 +17,7 @@
     - { role: yubikey, tags: ['yubikey'] }
     - { role: hashicorp, tags: ['hashicorp'] }
     - { role: dev, tags: ['dev'] }
+    - { role: tmux, tags: ['tmux'] }
   vars_prompt:
     - name: user_password
       prompt: "Enter desired user password"

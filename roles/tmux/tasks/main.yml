@@ -1,0 +1,16 @@
+---
+- name: Install tmux
+  pacman: name=tmux state=present
+
+- name: Clone Oh-My-Tmux
+  ansible.builtin.git:
+    repo: https://github.com/gpakosz/.tmux.git
+    dest: /home/{{user.name}}/.tmux
+
+- name: Create a symbolic link
+  ansible.builtin.file:
+    src: /home/{{user.name}}/.tmux/.tmux.conf
+    dest: /home/{{user.name}}/.tmux.conf
+    owner: "{{user.name}}"
+    group: "{{user.name}}"
+    state: link
