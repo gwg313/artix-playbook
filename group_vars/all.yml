@@ -19,7 +19,7 @@ firejail:
         - ~/.keys
 ssh:
     port: 22
-    user_key: ~/.ssh/id_ed25519
+    user_key: /home/glen/.ssh/id_ed25519
     enable_sshd: True
 
 gnupg:
@@ -63,3 +63,59 @@ aur:
         - miller
         - myrepos
         - ctmg
+bluetooth:
+    disable: False
+
+dev:
+  base:
+   - arm-none-eabi-binutils
+   - arm-none-eabi-gcc
+   - arm-none-eabi-newlib
+   - avrdude
+   - avr-gcc
+   - avr-libc
+   - bash-language-server
+   - cmake
+   - colordiff
+   - devhelp
+   - dfu-programmer
+   - dfu-util
+   - docker
+   - docker-compose
+   - eslint
+   - fakeroot
+   - flex
+   - groff
+   - highlight
+   - hlint
+   - hyperfine
+   - make
+   - marked
+   - nim
+   - nimble
+   - pandoc
+   - picocom
+   - pyenv
+   - pyenv-virtualenv
+   - python-black
+   - python-isort
+   - python-nose
+   - python-pip
+   - python-pipenv
+   - python-pylint
+   - python-pynvim
+   - python-pytest
+   - python-pyflakes
+   - pyright
+   - qmk
+   - ripgrep
+   - rust
+   - shellcheck
+   - texlive-most
+  aur:
+   - cc65
+   - insomnia
+
+terminal:
+  base:
+  aur:
