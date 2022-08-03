@@ -6,6 +6,11 @@
   when: dotfiles is defined
   tags:
     - aur
+- name: Download antigen
+  ansible.builtin.get_url:
+    url: git.io/antigen
+    dest: /home/{{user.name}}
+    mode: '0644'
 
 - name: Clone user dotfiles
   git:
